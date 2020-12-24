@@ -1,0 +1,17 @@
+<h1>Profile</h1>
+
+<h3>Tên</h3>
+<%= @user.name%>
+
+<h3>Tuổi</h3>
+<%= @user.age %>
+
+<h3>Địa chỉ email</h3>
+<%= @user.email %>
+
+<h3>Ảnh đại diện</h3>
+<p>
+    <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+<% end %>
+</p>

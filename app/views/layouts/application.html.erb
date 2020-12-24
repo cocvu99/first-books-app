@@ -18,6 +18,7 @@
     <p> hay </p>
 
     <%= link_to "Đăng xuất" , destroy_user_session_path, method: :delete %>
+    <%= link_to current_user.name , users_show_path %>
   <hr>
   <% else %>
     <h3> Bạn chưa đăng nhập, mời làm các bước sau </h3>
