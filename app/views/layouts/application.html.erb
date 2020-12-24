@@ -10,6 +10,23 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+    <h3>Xin chào, bạn <%= current_user.name %>! </h3>
+    <h3>Bạn muốn ... </h3>
+
+    <%= link_to "Chỉnh sửa" , edit_user_registration_path%>
+    <p> hay </p>
+
+    <%= link_to "Đăng xuất" , destroy_user_session_path, method: :delete %>
+  <hr>
+  <% else %>
+    <h3> Bạn chưa đăng nhập, mời làm các bước sau </h3>
+    <%= link_to "Đăng nhập" , new_user_session_path %>
+    
+    <h3> hoặc </h3>
+    <%= link_to "Tạo tài khoản mới" , new_user_registration_path %>
+  <% end %>
+    
     <%= yield %>
   </body>
 </html>
